@@ -8,15 +8,16 @@ class CarBloc extends Bloc<CarEvent, CarState> {
 
   CarBloc() : super(CarInitalState()) {
     on<LoadCarEvent>(
-      (event, emit) => emit(CarSuccessState(cars: _carRepository.getCars())),
+      (event, emit) async =>
+          emit(CarSuccessState(cars: await _carRepository.getCars())),
     );
     on<AddCarEvent>(
-      (event, emit) =>
-          emit(CarSuccessState(cars: _carRepository.addCar(event.car))),
+      (event, emit) async =>
+          emit(CarSuccessState(cars: await _carRepository.addCar(event.car))),
     );
     on<RemoveCarEvent>(
-      (event, emit) =>
-          emit(CarSuccessState(cars: _carRepository.removeCar(event.car))),
+      (event, emit) async => emit(
+          CarSuccessState(cars: await _carRepository.removeCar(event.car))),
     );
   }
 }
