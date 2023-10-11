@@ -11,19 +11,6 @@ class CarBloc extends Bloc<CarEvent, CarState> {
   CarBloc() : super(CarInitalState()) {
     on(_mapEventToState);
   }
-  // on<LoadCarEvent>(
-  //   (event, emit) async =>
-  //       emit(CarSuccessState(cars: await _carRepository.getCars())),
-  // );
-  // on<AddCarEvent>(
-  //   (event, emit) async =>
-  //       emit(CarSuccessState(cars: await _carRepository.addCar(event.car))),
-  // );
-  // on<RemoveCarEvent>(
-  //   (event, emit) async => emit(
-  //       CarSuccessState(cars: await _carRepository.removeCar(event.car))),
-  // );
-  // }
   void _mapEventToState(CarEvent event, Emitter emit) async {
     List<Car> cars = [];
     emit(CarLoadingState());
