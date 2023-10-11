@@ -16,8 +16,8 @@ class CarLoadingState extends CarState {
   CarLoadingState() : super(cars: []);
 }
 
-class CarSuccessState extends CarState {
-  CarSuccessState({required List<Car> cars}) : super(cars: cars);
+class CarLoadedState extends CarState {
+  CarLoadedState({required List<Car> cars}) : super(cars: cars);
 }
 
 class CarErrorState extends CarState {

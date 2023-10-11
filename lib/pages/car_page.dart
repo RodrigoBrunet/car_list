@@ -39,11 +39,11 @@ class _CarPageState extends State<CarPage> {
           child: BlocBuilder<CarBloc, CarState>(
             bloc: bloc,
             builder: (context, state) {
-              if (state is CarInitalState) {
+              if (state is CarLoadingState) {
                 return const Center(
                   child: CircularProgressIndicator(),
                 );
-              } else if (state is CarSuccessState) {
+              } else if (state is CarLoadedState) {
                 final carList = state.cars;
                 return ListView.separated(
                   itemCount: carList.length,
@@ -52,8 +52,13 @@ class _CarPageState extends State<CarPage> {
                         child: ClipRRect(
                       child: Text(carList[index].brand.substring(0, 1)),
                     )),
-                    title:
-                        Text('${carList[index].brand} ${carList[index].model}'),
+                    title: Text(
+                        '${carList[index].brand} ${carList[index].model} - ${carList[index].color}'),
+                    trailing: IconButton(
+                        onPressed: () {
+                          bloc.add(RemoveCarEvent(car: carList[index]));
+                        },
+                        icon: const Icon(Icons.delete)),
                   ),
                   separatorBuilder: (_, __) => const Divider(
                     color: Colors.transparent,
