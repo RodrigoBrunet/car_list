@@ -6,8 +6,8 @@ class CarRepository {
   Future<List<Car>> getCars() async {
     _cars.addAll([
       Car(brand: 'Ferrari', model: 'SF90', color: 'Red'),
-      Car(brand: 'Maclaren', model: 'P1', color: 'Grey'),
-      Car(brand: 'Mercedes', model: 'Clase A', color: 'White'),
+      Car(brand: 'Mclaren', model: 'P1', color: 'Grey'),
+      Car(brand: 'Buggatti', model: 'Veyron', color: 'White'),
     ]);
     return Future.delayed(
       const Duration(seconds: 2),
