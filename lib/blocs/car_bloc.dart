@@ -13,7 +13,6 @@ class CarBloc extends Bloc<CarEvent, CarState> {
   }
   void _mapEventToState(CarEvent event, Emitter emit) async {
     List<Car> cars = [];
-    emit(CarLoadingState());
 
     emit(CarLoadingState());
 
