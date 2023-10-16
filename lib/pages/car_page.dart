@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:car_list/blocs/car_bloc.dart';
 import 'package:car_list/blocs/car_events.dart';
 import 'package:car_list/blocs/car_state.dart';
@@ -33,8 +31,6 @@ class _CarPageState extends State<CarPage> {
     bloc.close();
     super.dispose();
   }
-
-  addCar(Car car) {}
 
   @override
   Widget build(BuildContext context) {
