@@ -17,6 +17,9 @@ class CarPage extends StatefulWidget {
 
 class _CarPageState extends State<CarPage> {
   late final CarBloc bloc;
+  String textBrand = 'Jaguar';
+  String textModel = 'JX-25';
+  String textColor = 'Green';
 
   @override
   void initState() {
@@ -86,9 +89,10 @@ class _CarPageState extends State<CarPage> {
                               onPressed: () {
                                 bloc.add(AddCarEvent(
                                     car: Car(
-                                        brand: 'Jaguar',
-                                        model: 'JX-25',
-                                        color: 'Green')));
+                                  brand: textBrand,
+                                  model: textModel,
+                                  color: textColor,
+                                )));
                               },
                               icon: const Icon(
                                 Icons.add,
